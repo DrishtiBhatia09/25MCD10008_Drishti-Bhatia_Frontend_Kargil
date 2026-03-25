@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Smart To-Do Manager</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <style>
+    .overdue { border: 2px solid red !important; }
+    .completed { text-decoration: line-through; color: gray; }
+  </style>
+</head>
+<body>
+<div class="container my-5">
+  <h1 class="text-center mb-4">Smart To-Do Manager</h1>
+
+  <!-- Task Input -->
+  <div class="row mb-3">
+    <div class="col-md-5 mb-2">
+      <input type="text" id="taskName" class="form-control" placeholder="Task Name">
+    </div>
+    <div class="col-md-2 mb-2">
+      Priority
+      <select id="taskPriority" class="form-select">
+        <option value="Low">Low</option>
+        <option value="Medium">Medium</option>
+        <option value="High">High</option>
+      </select>
+    </div>
+    <div class="col-md-3 mb-2">
+      <input type="date" id="taskDeadline" class="form-control">
+    </div>
+    <div class="col-md-2 mb-2">
+      <button id="addTaskBtn" class="btn btn-primary w-100">Add Task</button>
+    </div>
+  </div>
+
+  <!-- Filter & Sort -->
+  <div class="row mb-3">
+    <div class="col-md-6 mb-2">
+      <div class="btn-group" role="group">
+        <button id="filterAll" class="btn btn-primary">All</button>
+        <button id="filterCompleted" class="btn btn-outline-primary">Completed</button>
+        <button id="filterPending" class="btn btn-outline-primary">Pending</button>
+      </div>
+    </div>
+    <div class="col-md-6 mb-2 text-end">
+      <div class="btn-group" role="group">
+        <button id="sortPriority" class="btn btn-outline-secondary">Priority</button>
+        <button id="sortDeadline" class="btn btn-outline-secondary">Deadline</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Task Counters -->
+  <div class="mb-3">
+    <span>Total Tasks: <span id="totalTasks">0</span></span> |
+    <span>Completed: <span id="completedTasks">0</span></span> |
+    <span>Pending: <span id="pendingTasks">0</span></span>
+  </div>
+
+  <!-- Task List -->
+  <div id="taskList" class="row g-3"></div>
+</div>
+
+<script src="app.js"></script>
+</body>
+</html>
